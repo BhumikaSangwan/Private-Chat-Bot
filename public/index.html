@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Chat</title>
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        #chat {
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #messages {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        #messages>li {
+            padding: 0.5rem 1rem;
+            max-width: 60%;
+            border-radius: 10px;
+            margin: 5px 25px;
+        }
+
+        .sentMsg {
+            background: #d1e7ff;
+            text-align: right;
+            align-self: flex-start;
+        }
+
+        .receivedMsg {
+            margin-right: auto;
+            background: #efefef;
+            text-align: left;
+            align-self: flex-start;
+        }
+
+        #input {
+            width: 70%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        #send {
+            padding: 10px 20px;
+            margin-left: 5px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #send:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chat">
+        <h2>Private Chat</h2>
+        <ul id="messages"></ul>
+        <input id="input" type="text" placeholder="Type a message..." disabled>
+        <button id="send" disabled>Send</button>
+    </div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/script.js"></script>
+</html>
